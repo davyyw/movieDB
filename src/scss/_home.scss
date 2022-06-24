@@ -1,0 +1,175 @@
+@use "variables" as *;
+@use "fonts" as *;
+
+.nav-sort-desktop {
+  display: none;
+}
+
+.movies-container {
+    padding-bottom: 5rem !important;
+}
+
+.movie-card {
+  background-color: $darkGrey;
+  width: 88%;
+  max-width: 22rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  overflow: hidden;
+  h3 {
+    font-family: "SourceSans Regular";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    height: 4.5rem;
+    color: $CSyellow;
+    margin: 0;
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  p {
+    font-family: "SourceSans Light";
+    font-size: 1.25rem;
+    color: $white;
+    margin: 0;
+    padding: 0 0.5rem 0.5rem;
+    span {
+      font-family: "SourceSans Regular";
+      color: $CSyellow;
+    }
+  }
+  .card-rating {
+    font-size: 1.5rem;
+    padding-top: 0.75rem;
+  }
+  .movie-poster {
+    width: 100%;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0;
+    }
+    .hover-description {
+      background-color: rgba($color: #000000, $alpha: 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      p {
+        padding: 1.5rem 0.5rem;
+        font-style: italic;
+        line-height: 1.75rem;
+        max-height: calc(1.75rem * 11);
+        overflow: hidden;
+      }
+      a {
+        text-decoration: none;
+        font-family: "SourceSans Light";
+        font-size: 1.75rem;
+        color: $CSyellow;
+        border: 3px solid $CSyellow;
+        padding: 0.1rem 0.5rem;
+        margin: 0.5rem;
+        position: absolute;
+        bottom: 2rem;
+      }
+      button {
+        position: absolute;
+        bottom: 1rem;
+        right: 0.5rem;
+        svg {
+          width: 5rem;
+          height: 5rem;
+          color: $CSyellow;
+        }
+      }
+    }
+  }
+}
+
+.next-button,
+.prev-button {
+    background-color: $darkGrey;
+    font-family: "SourceSans Light";
+    color: $white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: .8rem 1.2rem;
+    margin: 1rem !important;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $CSyellow;
+    }
+}
+
+.next-button::after {
+    content: "  \00BB";
+    font-size: 1.5rem;
+}
+
+.prev-button::before {
+    content: "\00AB  ";
+    font-size: 1.5rem;
+}
+
+.css-e53awj-MuiStack-root {
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .movies-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem 1rem;
+  }
+  .movie-card {
+    width: 18rem;
+    max-width: 18rem;
+    margin: 0;
+    .movie-poster {
+      height: 432px;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .nav-sort-desktop {
+    display: inline;
+    ul {
+      list-style: none;
+      background-color: $darkGrey;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 61rem;
+      height: 4rem;
+      margin: 2rem auto 1rem;
+      padding: 0 3rem;
+      border-radius: 15px;
+      font-size: 1.875rem;
+      a {
+        text-decoration: none;
+        color: white;
+        &:focus,
+        &:hover,
+        &:active {
+          color: $CSyellow;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .movies-container {
+    justify-content: center;
+    max-width: 98rem;
+    margin: 0 auto;
+  }
+}

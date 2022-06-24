@@ -1,0 +1,15 @@
+White:
+ hex: #ffffff
+ rgb: 255,255,255
+
+Yellow: 
+ hex: #fee400
+ rgb: 255,228,0
+
+Dark Gray: 
+ hex: #2f2f2f
+ rgb: 47,47,47
+
+Light Gray:
+ hex: #444444
+ rgb: 68,68,68 

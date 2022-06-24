@@ -1,0 +1,211 @@
+@use 'variables' as *;
+@use 'fonts' as *;
+
+.single-movie-card {
+    width: 100%;
+    margin: 0;
+    background-color: $darkGrey;
+    position: relative;
+    overflow: hidden;
+    .movie-description {
+        padding-bottom: 1rem;
+    }
+    .single-movie-poster {
+        width: 100%;
+        max-height: 40rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            margin: 0;
+            width: 100%;
+        }
+    }
+    h2 {
+        font-family: 'SourceSans Regular';
+        font-size: 2.25rem;
+        color: $CSyellow;
+        margin: 0;
+        padding: 1rem 1rem 0;
+        position: relative;
+        &::after {
+            content: '';
+            height: .15rem;
+            margin: 0 auto;
+            background-color: $CSyellow;
+            position: absolute;
+            bottom: -.8rem;
+            left: .6rem;
+            right: .6rem;
+        }
+    }
+    h3 {
+        font-family: 'SourceSans Regular';
+        font-size: 2rem;
+        color: $white;
+        margin: 0;
+        padding: 1rem 1rem 0;
+        position: relative;
+        &::after {
+            content: '';
+            height: .15rem;
+            margin: 0 auto;
+            background-color: $white;
+            position: absolute;
+            bottom: -.8rem;
+            left: .6rem;
+            right: .6rem;
+        }
+    }
+    p {
+        font-family: 'SourceSans Light';
+        font-size: 1.25rem;
+        color: $white;
+        margin-top: .4rem;
+        margin-bottom: 0rem;
+        padding: 1.3rem 1rem 3rem;
+        span {
+            color: $CSyellow;
+            font-family: 'SourceSans Regular';
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $CSyellow;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &::before {
+            content: "\00AB  ";
+            font-size: 1.5rem;
+        }
+    }
+    .single-rating,
+    .single-runtime,
+    .single-date {
+        margin: 0;
+        padding: 0 1rem;
+    }
+    .single-rating {
+        font-size: 1.75rem;
+        padding-bottom: 1.4rem;
+    }
+    .single-runtime {
+        padding-bottom: 0;
+    }
+    .single-date {
+        padding-bottom: 1rem;
+    }
+    .btn-favourite {
+        position: relative;
+        text-align: right;
+        height: 1rem;
+        button {
+            position: relative;
+            bottom: 3rem;
+            svg {
+                width: 5rem;
+                height: 5rem;
+                color: $CSyellow;    
+            }
+        }
+    }
+    .credits-section ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: .75rem 1.3rem 0;
+        li {
+            font-size: 1.25rem;
+            color: $white;
+            list-style: none;
+            padding: .25rem 1rem .25rem 0;
+        }
+    }
+}
+
+.trailer-card {
+    height: 16rem;
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 400px) {
+    .trailer-card {
+        height: 20rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .single-movie-card {
+        margin: 2rem auto 0;
+        width: 88%;
+        min-height: 30rem;
+        border-radius: 15px;
+        display: flex;
+        h2,
+        h3, 
+        p,
+        ul {
+            padding-left: 2rem !important;
+            padding-right: 4rem !important;
+        }
+        h2::after,
+        h3::after {
+            left: 1rem;
+            right: 1rem;
+        }
+        a {
+            padding-left: 2rem;
+        }
+        .single-movie-poster {
+            position: relative;
+            max-height: none;
+            flex: 0 0 calc(30rem / 1.5);
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .trailer-card {
+        margin: 2rem auto;
+        width: 88%;
+        height: 22rem;
+        max-width: 50rem;
+        border-radius: 15px;
+        overflow: hidden;
+        h3 {
+            font-family: 'SourceSans Light';
+            color: $white;
+            font-size: 1.75rem;
+            background-color: $darkGrey;
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .trailer-card {
+        height: 26rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    .single-movie-card {
+        min-height: 40rem;
+        .single-movie-poster {
+            flex: 0 0 calc(40rem / 1.5);
+        }
+    }
+    .trailer-card {
+        height: calc(50rem * 0.5625);
+    }
+}

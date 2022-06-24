@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+footer {
+  background-color: $darkGrey;
+  color: $white;
+  height: 3rem;
+  font-size: 0.83rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  p {
+    font-size: 0.85rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  footer {
+    position: absolute;
+  }
+}
